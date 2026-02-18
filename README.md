@@ -1,17 +1,6 @@
-# Data Immersion & Wrangling Starter Pack
+# Data Immersion & Wrangling 
 
-This repository is structured to help an intern complete the **data access, familiarization, quality assessment, cleaning, and transformation** workflow quickly and in a repeatable way.
-
-## Deliverables mapping
-
-- **GitHub Deliverables**
-  - `outputs/data_dictionary.csv` → variable meaning, type, sample values, business relevance hints.
-  - `scripts/02_clean_transform.py` → data cleaning and transformation script.
-  - `outputs/cleaned_dataset.csv` → final analysis-ready dataset.
-- **LinkedIn video (3–5 min)**
-  - Use the guide in `docs/linkedin_walkthrough_outline.md`.
-
-## Recommended workflow
+This repository is about the **data access, familiarization, quality assessment, cleaning, and transformation** workflow quickly and in a repeatable way.
 
 ## 1) Data Access & Familiarization
 
@@ -57,7 +46,4 @@ source .venv/bin/activate
 pip install pandas numpy
 ```
 
-## Notes
 
-- If your dataset uses different date/DOB column names, update constants at the top of `scripts/02_clean_transform.py`.
-- You can adapt this workflow to SQL by implementing equivalent staging + cleaning queries.
