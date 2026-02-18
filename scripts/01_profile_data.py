@@ -12,7 +12,6 @@ import pandas as pd
 
 
 def infer_business_relevance(column_name: str) -> str:
-    """Simple heuristic prompt to help intern think about business meaning."""
     lowered = column_name.lower()
     if "id" in lowered:
         return "Likely unique identifier useful for joins, deduplication, and traceability."
