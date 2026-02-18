@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-"""Initial data familiarization and quality profiling for a CSV dataset.
 
 Usage:
   python scripts/01_profile_data.py --input data/raw_dataset.csv --output-dir outputs
