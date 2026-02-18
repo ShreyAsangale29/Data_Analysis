@@ -1,9 +1,4 @@
-#!/usr/bin/env python3
-"""Clean and transform a raw dataset into an analysis-ready dataset.
 
-Usage:
-  python scripts/02_clean_transform.py --input data/raw_dataset.csv --output outputs/cleaned_dataset.csv
-"""
 
 from __future__ import annotations
 
