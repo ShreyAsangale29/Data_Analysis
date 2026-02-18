@@ -1,0 +1,6 @@
+customer_id,customer_name,date_of_birth,transaction_date,sales_amount,city
+1, Alice ,1990/01/05,2024-01-03,100, New York
+2,Bob,1985-07-12,01/04/2024,2000,new york
+2,Bob,1985-07-12,01/04/2024,2000,new york
+3,,1979-11-30,2024/01/05,50000,Los Angeles 
+4,Charlie,,2024-01-07,,Chicago
