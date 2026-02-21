@@ -1,49 +1,87 @@
 # Data Immersion & Wrangling 
 
 This repository is about the **data access, familiarization, quality assessment, cleaning, and transformation** workflow quickly and in a repeatable way.
+Walmart Sales Data Analysis Project
+## 1) Project Overview
 
-## 1) Data Access & Familiarization
+This task focuses on cleaning and preparing the Walmart Sales dataset for further analysis and dashboard development.
+The objective is to transform raw sales data into a structured, reliable, and analysis-ready dataset.
 
-1. Put the raw file in `data/raw_dataset.csv`.
-2. Run profiling script:
+Data preparation is a critical step to ensure accurate insights in subsequent exploratory data analysis (EDA) and business intelligence reporting.
+## 2) Objective
 
-```bash
-python scripts/01_profile_data.py --input data/raw_dataset.csv --output-dir outputs
-```
+Load and inspect the raw dataset
+Handle missing values and inconsistencies
+Remove duplicate records
+Correct data types
+Create time-based features for analysis
+Export a clean dataset for downstream tasks
 
-3. Open `outputs/data_dictionary.csv` and complete the `variable_definition` column with domain knowledge.
+## 3) Dataset Description
 
-## 2) Data Quality Assessment
+The dataset contains weekly sales data for multiple Walmart stores, along with economic and environmental indicators such as:
 
-Review `outputs/data_quality_report.csv` for:
-- Missing values
-- Duplicates (dataset-level and column-level)
-- Inconsistent leading/trailing whitespace
-- Potential outliers (IQR-based count for numeric fields)
+Store ID
+Date
+Weekly Sales
+Holiday Flag
+Temperature
+Fuel Price
+Consumer Price Index (CPI)
+Unemployment Rate
 
-## 3) Data Cleaning & Transformation
+## Data Cleaning Steps Performed
+1) Data Loading
 
-Run:
+Imported CSV file using Pandas
+Inspected structure using:
+.head()
+.info()
+.shape()
 
-```bash
-python scripts/02_clean_transform.py --input data/raw_dataset.csv --output outputs/cleaned_dataset.csv
-```
+2)Missing Value Handling
 
-What the cleaning script does:
-- Removes exact duplicate rows
-- Standardizes string whitespace and null-like values
-- Converts date/time-like columns to `YYYY-MM-DD`
-- Imputes missing values (median for numeric, mode for categorical)
-- Lowercases low-cardinality text categories
-- Creates `customer_age` when a DOB-like column exists
-- Caps numeric outliers using IQR fences
+Checked for null values using:
+df.isnull().sum()
+Filled or handled missing values appropriately to ensure dataset completeness.
 
-## Optional setup
+3)Duplicate Removal
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install pandas numpy
-```
+Identified duplicate rows using:
+df.duplicated().sum()
+Removed duplicates:
+df.drop_duplicates(inplace=True)
 
+4)Data Type Corrections
 
+Converted Date column to datetime format:
+df['Date'] = pd.to_datetime(df['Date'])
+
+5)Feature Engineering
+
+Created additional time-based columns to support time-series analysis:
+Year
+Month
+Week
+Example:
+df['Year'] = df['Date'].dt.year
+df['Month'] = df['Date'].dt.month
+df['Week'] = df['Date'].dt.isocalendar().week
+
+6)Data Validation
+
+Ensured no missing values remain
+Confirmed no duplicate entries
+Verified correct data types
+
+7)The cleaned dataset was exported for use in further tasks:
+
+df.to_csv("cleaned_walmart_sales.csv", index=False)
+
+## Outcome
+
+The dataset is now:
+Clean
+Structured
+Consistent
+Ready for analytical modeling and dashboard integration
