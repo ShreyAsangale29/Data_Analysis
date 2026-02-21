@@ -1,6 +1,0 @@
-customer_id,customer_name,date_of_birth,transaction_date,sales_amount,city
-1, Shreya ,1990/04/09,2024-01-03,100, Nashik
-2,Ketaki,1985-02-19,01/04/2024,2000,Mumbai
-2,Ayush,1985-10-19,01/04/2024,2000,Panvel
-3,,1979-11-30,2024/01/05,50000,Pune
-4,Tanvi,,2024-07-27,,Dubai
